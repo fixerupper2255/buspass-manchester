@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    left:0;
+}
+
+body{
+    max-width: 414px;
+    max-height: 896px;
+    color: var(--westar);
+    font-family: 'Radio Canada', sans-serif;
+    background-color: var(--firefly);
+}
+
+nav{
+    background-color: var(--firefly);
+    width: 100%;
+    height: 60px;
+    /* position: absolute; */
+    padding: 0;
+}
+.grid-container-3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 10px;
+  }
+
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 10px;
+}
+
+.grid-item {
+    padding: 10px;
+}
+.nav-lists li{
+    list-style: none;
+}
+.burger{
+    text-align: left;
+}
+.first, .second, .third{
+    margin-left: 20px;
+    list-style: none;
+    border-bottom: solid 3px var(--westar);
+    border-radius: 5px;
+    width: 30px;
+    
+}
+.first, .second{
+    margin-bottom: 7px;
+}
+.header{
+    font-size: 1.2em;
+    font-weight: lighter;
+    /* margin-top: 20px; */
+    color: var(--westar);
+    text-align: center;
+}
+.imageDiv{
+    text-align: right;
+    padding-right: 30px;
+}
+.imageDiv img{
+    width: 22px;
+}
+
+.align{
+    text-align: center;
+}
+.links{
+    background-color: var(--firefly);
+    width: 100%;
+    height: 50px;
+    /* position: absolute; */
+    padding: 0;
+    margin-top:0;
+}
+
+.active{
+    border-bottom: solid 5px var(--denim);
+}
+
+.container{
+    background-color: var(--oslo-gray);
+    height: 786px;
+    padding-top: 1px;
+}
+.wrapper{
+    background-color: white;
+    height: 735px;
+    margin: 10px;
+}
+.qr_wrapper{
+    margin: 0 25% 0 25%;
+}
+.qr_wrapper img{
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+}
+.passname{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.passname h1{
+    text-align: center;
+    color: black;
+    font-size: 1.5em;
+    font-weight: 1000;
+}
+.passtype{
+    border-top: solid 2px var(--oslo-gray);
+    border-bottom: solid 2px var(--oslo-gray);
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+.passtype-element{
+    color:black;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.passtype-element h1{
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+.valid{
+    margin-top: 20px;
+    text-align: center;
+}
+.valid p{
+    color: black;
+    font-weight: bold;
+}
+
+#animated{
+    margin-top: 20px;
+    background-color: var(--sea-buckthorn);
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8px 0 8px 0;
+}
+
+#time{
+    text-align: center;
+    color: black;
+}
+.countdown{
+    margin-top: 20px;
+}
+.countdown_text{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+#timer{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+}
+
+.ticket_id{
+    margin: 20px;
+    color: black;
+    text-align: center;
+    background-color: var(--oslo-gray);
+    border-radius: 25px;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.bottom{
+    margin-top: 25px;
+    color: var(--casal);
+    text-align: center;
+    font-weight: bold;
+}
+
+footer{
+    width: 100%;
+    background-color: white;
+    height: 30px;
+}
+
+@-webkit-keyframes clockwise /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    to {
+      -webkit-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg);
+    }
+  }
+  @keyframes clockwise {
+    from {
+      -ms-transform: rotate(-20deg);
+      -moz-transform: rotate(-20deg);
+      -webkit-transform: rotate(-20deg);
+      -o-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+    }
+    to {
+      -ms-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -webkit-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg);
+    }
+  }
+  .clockwise {
+    -webkit-animation: clockwise 2s linear infinite;
+    -moz-animation: clockwise 2s linear infinite;
+    -ms-animation: clockwise 2s linear infinite;
+    -o-animation: clockwise 2s linear infinite;
+    animation: clockwise 2s linear infinite;
+    animation: clockwise 2s linear infinite reverse;
+    animation-timing-function: cubic-bezier(0.2,-1,0.9,1);
+
+  }

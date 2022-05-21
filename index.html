@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="buspass.css">
+    <link rel="stylesheet" href="palette.css">
+    <title>Bus Pass</title>
+    <link rel="apple-touch-icon" href="apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <nav>
+      <div class="grid-container-3">
+        <div class="grid-item">
+          <li class="first"></li>
+          <li class="second"></li>
+          <li class="third"></li>
+        </div>
+        <div class="grid-item align">
+          <h1 class="header">Tickets</h1>
+        </div>
+        <div class="grid-item imageDiv"><img src="img/cart-flipped.png" alt="cart"></div>
+      </div>
+    </nav>
+    <div class="grid-container-3 links">
+      <div class="grid-item align active">Active Tickets</div>
+      <div class="grid-item align">My Tickets</div>
+      <div class="grid-item align">Buy Tickets</div>
+    </div>
+    <div class="container">
+      <div class="wrapper">
+        <div class="qr_wrapper">
+          <img src="img/qr.jpeg" alt="qrcode">
+        </div>
+        <div class="passname">
+          <h1>Manchester 7 <br> Day MagicRider</h1>
+        </div>
+        <div class="passtype">
+          <div class="grid-container-2">
+            <div class="grid-item passtype-element">
+              <h1>1 Adult</h1>
+            </div>
+            <div class="grid-item passtype-element" style="text-align:right;">
+              <h1>£9.50</h1>
+            </div>
+          </div>
+        </div>
+        <div class="valid">
+          <p>Valid from: 00:00, <span id="date"></span></p>
+        </div>
+        <div id="animated" class="clockwise">
+          <h1 id="time"></h1>
+        </div>
+        <div class="countdown">
+          <p class="countdown_text">Ticket expires in</p>
+          <p id="timer"></p>
+        </div>
+        <div class="ticket_id">
+          <p>1241-<span id="id_date"></span>133-438</p>
+        </div>
+        <div class="bottom">
+          <p>More details <span class="to">&gt;</span></p>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+    <script src="buspass.js"></script>
+    <script>
+      window.addEventListener("click", (event) => {
+        document.documentElement.requestFullscreen().catch((e) => {
+          console.log(e);
+        });
+      });
+    </script>
+  </body>
+</html>
