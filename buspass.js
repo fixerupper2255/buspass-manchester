@@ -7,10 +7,10 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct
 let today_day = date.getDate() -1;
 let today_month = months[date.getMonth()];
 let today_year =  date.getFullYear();
-console.log(today_day + today_month + today_year);
+// console.log(today_day + today_month + today_year);
 let newDate = new Date();
 let t;
-console.log(date);
+// console.log(date);
 let gethours = newDate.getHours();
 let getminutes = newDate.getMinutes();
   if(gethours < 10 & getminutes >= 10){
@@ -25,7 +25,7 @@ let getminutes = newDate.getMinutes();
 valid_date.innerHTML = today_day + " " + today_month + " " + today_year;
 time.innerHTML = t; 
 next_week = newDate.setDate(newDate.getDate() + 6);
-console.log(next_week);
+// console.log(next_week);
 var countDownDate = new Date(next_week).getTime();
 const id_year = date.getFullYear() * 1e4; // 1e4 gives us the the other digits to be filled later, so 20210000.
 const id_month = (date.getMonth() + 1) * 100; // months are numbered 0-11 in JavaScript, * 100 to move two digits to the left. 20210011 => 20211100
