@@ -9,4 +9,4 @@ function updateCompass(event) {
 }
 
 // Update the compass when device orientation changes
-window.addEventListener('deviceorientation', updateCompass);
+window.addEventListener('deviceorientation', updateCompass, true);
