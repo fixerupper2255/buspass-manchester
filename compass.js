@@ -2,11 +2,34 @@ const compass = document.querySelector('.compass');
 const needle = document.querySelector('.needle');
 
 function updateCompass(event) {
-    // Extract rotation values from device orientation event
     const alpha = event.alpha || 0; // Z-axis rotation (in degrees)
-    // Rotate the needle to point to the current rotation
     needle.style.transform = `translateX(-50%) rotate(${-alpha}deg)`;
 }
 
-// Update the compass when device orientation changes
-window.addEventListener('deviceorientation', updateCompass, true);
+function requestDeviceOrientationPermission() {
+    if (/iPad|iPhone|iPod/.test(navigator.platform)) { // Check if it's an iOS device
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(permissionState => {
+                    if (permissionState === 'granted') {
+                        window.addEventListener('deviceorientation', updateCompass);
+                    } else {
+                        console.error('Permission denied for device orientation.');
+                    }
+                })
+                .catch(console.error);
+        } else {
+            console.error('Device orientation permission not supported.');
+        }
+    } else {
+        console.error('Not an iOS device.');
+    }
+}
+
+// Ask for permission when the page loads or when user interaction is detected
+document.addEventListener('DOMContentLoaded', () => {
+    requestDeviceOrientationPermission();
+});
+
+// You can also ask for permission on user interaction, for example, when a button is clicked
+// buttonElement.addEventListener('click', requestDeviceOrientationPermission);

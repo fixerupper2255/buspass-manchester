@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +12,10 @@
     </div>
     <script src="compass.js"></script>
 </body>
-</html>
+</html> -->
+
+<div class="full-width-block">
+	<div *ngIf="ifIOS" (click)="requestPermissionsIOS()" 
+		class="hidden-overlay" [ngClass]="{'hide': overlayClicked }">
+	</div>
+</div>
