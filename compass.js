@@ -14,18 +14,22 @@ function requestDeviceOrientationPermission() {
                     if (permissionState === 'granted') {
                         window.addEventListener('deviceorientation', updateCompass);
                     } else {
+                      needle.innerHTML = 'Permission denied for device orientation.'
                       alert('Permission denied for device orientation.');
                         console.error('Permission denied for device orientation.');
                     }
                 })
                 .catch(console.error);
         } else {
+            needle.innerHTML = 'Device orientation permission not supported.'
             alert('Device orientation permission not supported.');
             console.error('Device orientation permission not supported.');
         }
     } else {
+        needle.innerHTML = 'Not an iOS device.'
         alert('Not an iOS device.');
         console.error('Not an iOS device.');
+
     }
 }
 
