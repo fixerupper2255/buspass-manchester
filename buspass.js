@@ -66,3 +66,21 @@ var x = setInterval(function() {
     // document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+const strip = document.querySelector(".strip");
+const direction = document.querySelector(".direction");
+navigator.geolocation.watchPosition((data) => {
+  console.log(data);
+  // Get the heading value
+  let heading = data.coords.heading;
+  // Clamp the heading between -75 and 75 degrees
+  if (heading > 60) {
+      heading = 60;
+  } else if (heading < -60) {
+      heading = -60;
+  }
+  // Apply the rotation
+  strip.style.transform = `rotate(${heading}deg)`;
+  // Display the clamped heading value
+  direction.innerHTML = heading;
+});
